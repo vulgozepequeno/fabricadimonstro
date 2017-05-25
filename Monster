@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    
+    <h1>FABRICA DE MONSTRO</h1>         <!--titulo do projeto  -->
+    <H2>HORA DO SHOWW</H2>
+    <HR>
+	
+    <p   id='dado1' 									 onclick='m1.receberDados()'>_</p>    <!-- comando para receber dados do usuario-->
+    <img id='img1' src='QuadroFace1.png' alt='MONSTRO 1' onclick='m1.receberDados()'>
+    <br><br>
+
+    <p   id='dado2' 									 onclick='m2.receberDados()'>_</p>    <!-- comando para receber dados do usuario-->
+    <img id='img2' src='QuadroFace2.png' alt='MONSTRO 2' onclick='m2.receberDados()'>
+    <br><br>
+    
+	<p   id='dado3'  									 onclick='m3.receberDados()'>_</p>   <!-- comando para receber dados do usuario-->
+    <img id='img3' src='QuadroFace3.png' alt='MONSTRO 3' onclick='m3.receberDados()'>
+	<br><br>
+
+    <script>
+		//CLASSE----------------------------------------------------------------
+        function Monstro( ) {
+			this.nome = "<vazio>"; <!-- Recebe do usuario o nome dado a ele -->
+			this.tamanho = "<vazio>"; <!-- Recebe do usuario o tamanho dado a ele -->
+			this.forca = 0; <!-- Recebe do usuario a força dado a ele -->
+			this.receberDados = function () {
+									this.nome = prompt("NOME ");
+									this.tamanho = prompt("TAMANHO EM METROS ");
+									this.forca = prompt("FORCA - DE 1 a 1000");
+									mostrarTudo();
+								};
+		}
+		//DECLARACAO_SISTEMA----------------------------------------------------------------
+		
+		var m1 = new Monstro();
+		var m2 = new Monstro();
+		var m3 = new Monstro();
+		
+		function mostrarTudo(){
+			document.getElementById("dado1").innerHTML = m1.nome+" ["+m1.forca+"] "+m1.tamanho+"m" ;
+			document.getElementById("dado2").innerHTML = m2.nome+" ["+m2.forca+"] "+m2.tamanho+"m" ;
+			document.getElementById("dado3").innerHTML = m3.nome+" ["+m3.forca+"] "+m3.tamanho+"m" ;
+		}
+		//INICIO----------------------------------------------------------------
+		
+		mostrarTudo();
+		
+	</script>
+
+  </body>
+</html>
